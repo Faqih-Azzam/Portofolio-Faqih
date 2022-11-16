@@ -12,3 +12,31 @@ AOS.init({
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
+
+function contact() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let subject = document.getElementById("subject").value;
+  let message = document.getElementById("message").value;
+
+  if (name == "") {
+    return alert("Nama wajib di isi");
+  } else if (email == "") {
+    return alert("email wajib di isi");
+  } else if (subject == "") {
+    return alert("subject wajib di isi");
+  } else if (message == "") {
+    return alert("Message wajib di isi");
+  }
+
+  console.log(name);
+  console.log(email);
+  console.log(subject);
+  console.log(message);
+
+  let namaEmail = "jfaqihazzam@gmail.com";
+
+  let mail = document.createElement("a");
+  mail.href = `mailto:${namaEmail}?subject=${subject}&body=${name}, ${message}`;
+  mail.click();
+}
